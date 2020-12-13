@@ -8,7 +8,7 @@ public class SphereManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(spherePrefab, transform);
+        Instantiate(spherePrefab, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
