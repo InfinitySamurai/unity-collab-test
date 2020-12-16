@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
+        this.gameObject.tag = "Sphere";
     }
 
     // Update is called once per frame
