@@ -9,6 +9,12 @@ public class SphereManager : MonoBehaviour
     void Start()
     {
         Instantiate(spherePrefab, transform.position, Quaternion.identity);
+        Instantiate(spherePrefab, transform.position, Quaternion.identity);
+        Instantiate(spherePrefab, transform.position, Quaternion.identity);
+        Instantiate(spherePrefab, transform.position, Quaternion.identity);
+        Instantiate(spherePrefab, transform.position, Quaternion.identity);
+        Instantiate(spherePrefab, transform.position, Quaternion.identity);
+        Instantiate(spherePrefab, transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame

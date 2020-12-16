@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     // raycasting
     public float raycastLength = 200f;
 
+    // inventory
+    public Ball heldSphere;
+
     public abstract class Command
     {
         public abstract void Execute();
@@ -66,14 +69,25 @@ public class PlayerController : MonoBehaviour
             RaycastHit rayHit;
             bool didHit = Physics.Raycast(cameraHolder.transform.position, cameraHolder.transform.forward, out rayHit, raycastLength);
 
-            if(didHit && rayHit.collider)
+            if (heldSphere)
+            {
+                heldSphere.punt(cameraHolder.transform.forward * 10);
+                heldSphere = null;
+            }
+            else if (didHit && rayHit.collider && (!heldSphere))
             {
                 var ballComponent = rayHit.collider.GetComponent<Ball>();
                 if(ballComponent)
                 {
-                    ballComponent.punt(transform.forward);
+                    heldSphere = ballComponent;
                 }
             }
+
+        }
+
+        if(heldSphere)
+        {
+            heldSphere.transform.position = this.transform.position + cameraHolder.transform.forward * 2;
         }
     }
 
