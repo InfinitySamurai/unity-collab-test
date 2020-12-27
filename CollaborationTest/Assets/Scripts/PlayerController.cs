@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
     public float speed = 3;
+    public int throwStrength = 10000;
 
     // camera and rotation
     public Camera cameraHolder;
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
             if (heldSphere)
             {
-                heldSphere.punt(cameraHolder.transform.forward * 10);
+                heldSphere.GetComponent<Rigidbody>().AddForce(cameraHolder.transform.forward * throwStrength);
                 heldSphere = null;
             }
             else if (didHit && rayHit.collider && (!heldSphere))

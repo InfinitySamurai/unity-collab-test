@@ -6,7 +6,6 @@ public class Ball : MonoBehaviour
 {
     Rigidbody rigidBody;
 
-    public float puntStrength = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +17,5 @@ public class Ball : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void punt(Vector3 direction)
-    {
-        if(rigidBody)
-        {
-            rigidBody.velocity = direction * puntStrength;
-        }
     }
 }
