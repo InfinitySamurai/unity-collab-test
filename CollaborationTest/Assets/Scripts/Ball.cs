@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     Rigidbody rigidBody;
+    public BallType ballType;
 
     // Start is called before the first frame update
     void Start()

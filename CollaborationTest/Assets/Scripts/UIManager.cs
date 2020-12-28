@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UIController : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public GameObject pointDisplay;
     public PlayerData playerData;
-    private TextMeshPro textMesh;
+    private TextMeshProUGUI textMesh;
 
     private void OnEnable()
     {
-        textMesh = pointDisplay.GetComponent<TextMeshPro>();
+        textMesh = pointDisplay.GetComponent<TextMeshProUGUI>();
     }
 
     // Start is called before the first frame update

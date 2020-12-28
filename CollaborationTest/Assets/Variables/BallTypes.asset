@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294819d3180212d45bb118a108868795, type: 3}
-  m_Name: PlayerPoints
+  m_Script: {fileID: 11500000, guid: 2a6a38e18f552b143a95a63e7313fd3e, type: 3}
+  m_Name: BallTypes
   m_EditorClassIdentifier: 
-  Value: 46
+  types:
+  - {fileID: 11400000, guid: b0d87b1ceef07ae44b34e4a0c0913736, type: 2}
+  - {fileID: 11400000, guid: 04910f2a65e29974892b8ce87fc68027, type: 2}

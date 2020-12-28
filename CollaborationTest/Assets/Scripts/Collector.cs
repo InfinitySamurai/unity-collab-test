@@ -23,9 +23,9 @@ public class Collector : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Sphere")
         {
+            playerData.points.Value += collision.collider.gameObject.GetComponent<Ball>().ballType.pointValue.Value;
             Destroy(collision.collider.gameObject);
             particles.Play();
-            playerData.points.Value++;
         }
     }
 }
