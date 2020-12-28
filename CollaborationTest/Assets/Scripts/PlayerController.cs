@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public SOPlayerSystem playerData;
     public CharacterController characterController;
     public float speed = 3;
-    public int throwStrength = 10000;
+    public int baseThrowPower = 100;
 
     // camera and rotation
     public Camera cameraHolder;
-    //public Transform cameraHolder;
+    
     public float mouseSensitivity = 2f;
     public float upLimit = -50;
     public float downLimit = 50;
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
             if (heldSphere)
             {
-                heldSphere.GetComponent<Rigidbody>().AddForce(cameraHolder.transform.forward * throwStrength);
+                heldSphere.GetComponent<Rigidbody>().AddForce(cameraHolder.transform.forward * baseThrowPower * playerData.strength);
                 heldSphere = null;
             }
             else if (didHit && rayHit.collider && (!heldSphere))
