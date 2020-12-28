@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collector : MonoBehaviour
 {
     public ParticleSystem particles;
-    public SOPlayerSystem playerData;
+    public PlayerData playerData;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Collector : MonoBehaviour
         {
             Destroy(collision.collider.gameObject);
             particles.Play();
-            playerData.points++;
+            playerData.points.Value++;
         }
     }
 }

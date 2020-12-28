@@ -6,7 +6,13 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     public GameObject pointDisplay;
-    public SOPlayerSystem playerData;
+    public PlayerData playerData;
+    private TextMeshPro textMesh;
+
+    private void OnEnable()
+    {
+        textMesh = pointDisplay.GetComponent<TextMeshPro>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +23,6 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pointDisplay.GetComponent<TextMeshPro>().SetText(playerData.points.ToString());
+        textMesh.SetText(playerData.points.Value.ToString());
     }
 }
