@@ -28,43 +28,12 @@ public class PlayerController : MonoBehaviour
     // inventory
     public Ball heldSphere;
 
-    public abstract class Command
-    {
-        public abstract void Execute();
-    }
-
-    public class JumpFunction : Command
-    {
-        public override void Execute()
-        {
-            Jump();
-        }
-    }
-
-    public static void Jump()
-    {
-        
-    }
-
-    public static void DoMove()
-    {
-        Command keySpace = new JumpFunction();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            keySpace.Execute();
-        }
-
-    }
-
-
-
     void Update()
     {
         Move();
         Rotate();
 
-        Debug.DrawRay(cameraHolder.transform.position, cameraHolder.transform.forward);
+        Debug.DrawRay(cameraHolder.transform.position, cameraHolder.transform.forward, Color.red, 1f, true);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -125,12 +94,4 @@ public class PlayerController : MonoBehaviour
         Vector3 move = transform.forward * verticalMove + transform.right * horizontalMove;
         characterController.Move(speed * Time.deltaTime * move + gravityMove * Time.deltaTime);
     }
-
-    //private void OnMouseDown()
-    //{
-    //    RaycastHit ray;
-    //    bool didHit = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out ray, raycastLength);
-
-    //    Debug.Log(didHit);
-    //}
 }
