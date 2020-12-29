@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294819d3180212d45bb118a108868795, type: 3}
   m_Name: PlayerPoints
   m_EditorClassIdentifier: 
-  Value: 46
+  Value: 500

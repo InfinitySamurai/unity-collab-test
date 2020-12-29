@@ -7,4 +7,6 @@ public class PlayerData : ScriptableObject
 {
     public FloatReference points;
     public FloatReference strength;
+
+    public AnimationCurve strengthCurve;
 }
