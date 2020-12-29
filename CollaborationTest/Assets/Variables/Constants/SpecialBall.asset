@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc78e1f7d41c30642aebffa63278e4ed, type: 3}
-  m_Name: CommonBall
+  m_Name: SpecialBall
   m_EditorClassIdentifier: 
   pointValue:
     UseConstant: 1
-    ConstantValue: 1
+    ConstantValue: 100
     Variable: {fileID: 0}
-  material: {fileID: 2100000, guid: df1434d1188816741aa96e96f9beea2a, type: 2}
+  material: {fileID: 2100000, guid: 0249ba5ccc515ac43a186340bcce9f70, type: 2}

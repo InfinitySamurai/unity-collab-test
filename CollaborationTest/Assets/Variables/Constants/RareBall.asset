@@ -16,3 +16,4 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 10
     Variable: {fileID: 0}
+  material: {fileID: 2100000, guid: 615b6d86660ab2f4f885db05b480bc03, type: 2}

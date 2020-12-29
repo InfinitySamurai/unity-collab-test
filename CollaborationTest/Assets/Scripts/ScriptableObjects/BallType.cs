@@ -6,4 +6,5 @@ using UnityEngine;
 public class BallType : ScriptableObject
 {
     public IntReference pointValue;
+    public Material material;
 }

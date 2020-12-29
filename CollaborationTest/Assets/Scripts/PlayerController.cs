@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController characterController;
     public float speed = 3;
     public int baseThrowPower = 100;
+    public GameObject sphereTracker;
 
     // camera and rotation
     public Camera cameraHolder;
@@ -27,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
     // inventory
     public Ball heldSphere;
+
+    private void Start()
+    {
+    }
 
     void Update()
     {
@@ -59,6 +64,22 @@ public class PlayerController : MonoBehaviour
         if(heldSphere)
         {
             heldSphere.transform.position = this.transform.position + cameraHolder.transform.forward * 2;
+        }
+
+        if( Input.GetKey(KeyCode.F))
+        {
+            Ball[] spheres =  sphereTracker.GetComponentsInChildren<Ball>();
+            foreach (Ball sphere in spheres)
+            {
+                Vector3 spherePosition = sphere.GetComponent<Transform>().position;
+                Rigidbody sphereRigidBody = sphere.GetComponent<Rigidbody>();
+
+                Vector3 pushDirection = transform.position - spherePosition;
+                Debug.DrawRay(spherePosition, pushDirection * 100, Color.red, 1f);
+                  
+
+                sphereRigidBody.AddForce(pushDirection);
+            }
         }
     }
 
