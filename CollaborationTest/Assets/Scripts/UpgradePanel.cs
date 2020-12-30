@@ -31,6 +31,7 @@ public class UpgradePanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        purchaseButton.interactable = upgrade.canPurchase();
         costText.text = upgrade.upgradeNextLevelCost.Value.ToString();
         upgradeNameText.text = upgrade.upgradeName;
         upgradeDescriptionText.text = upgrade.upgradeDescription;

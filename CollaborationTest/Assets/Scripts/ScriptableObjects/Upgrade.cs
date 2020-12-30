@@ -14,19 +14,27 @@ public class Upgrade : ScriptableObject
     public ExponentialCurve upgradeCurve;
     public PlayerData playerData;
 
+    public bool canPurchase()
+    {
+        return playerData.points.Value - upgradeNextLevelCost.Value > 0;
+    }
+
     public void Purchase()
     {
         // subtract current cost from players points
-        playerData.points.Value -= upgradeNextLevelCost.Value;
+        if (canPurchase())
+        {
+            playerData.points.Value -= upgradeNextLevelCost.Value;
 
-        // increase level of the upgrade
-        upgradeLevel.Value++;
+            // increase level of the upgrade
+            upgradeLevel.Value++;
 
-        //set the new cost based on the curve
-        float curveValue = upgradeCurve.GetValue(upgradeLevel.Value);
-        Debug.Log("Curve Value is " + curveValue);
-        upgradeNextLevelCost.Value = Mathf.CeilToInt(upgradeBaseCost.Value * curveValue);
+            //set the new cost based on the curve
+            float curveValue = upgradeCurve.GetValue(upgradeLevel.Value);
+            Debug.Log("Curve Value is " + curveValue);
+            upgradeNextLevelCost.Value = Mathf.CeilToInt(upgradeBaseCost.Value * curveValue);
 
-        Debug.Log("Upgraded " + upgradeName + " new cost is " + upgradeNextLevelCost.Value + " level is " + upgradeLevel.Value);
+            Debug.Log("Upgraded " + upgradeName + " new cost is " + upgradeNextLevelCost.Value + " level is " + upgradeLevel.Value);
+        }
     }
 }
