@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     public Camera cameraHolder;
     
     public float mouseSensitivity = 2f;
-    public float upLimit = -50;
-    public float downLimit = 50;
+    public float upLimit = -20;
+    public float downLimit = 20;
 
     // gravity
     private float gravity = 9.87f;
@@ -75,9 +75,8 @@ public class PlayerController : MonoBehaviour
                 Rigidbody sphereRigidBody = sphere.GetComponent<Rigidbody>();
 
                 Vector3 pushDirection = transform.position - spherePosition;
-                Debug.DrawRay(spherePosition, pushDirection * 100, Color.red, 1f);
 
-                sphereRigidBody.AddForce(pushDirection);
+                sphereRigidBody.AddForce(pushDirection.normalized);
             }
         }
     }
