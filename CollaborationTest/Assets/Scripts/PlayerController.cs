@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
 
                 Vector3 pushDirection = transform.position - spherePosition;
                 Debug.DrawRay(spherePosition, pushDirection * 100, Color.red, 1f);
-                  
 
                 sphereRigidBody.AddForce(pushDirection);
             }

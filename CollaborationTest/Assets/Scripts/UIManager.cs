@@ -19,7 +19,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        upgradeCanvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -39,19 +40,8 @@ public class UIManager : MonoBehaviour
 
     private void ToggleUpgradeCanvas()
     {
-        if(upgradeCanvasVisible == false)
-        {
-            upgradeCanvas.enabled = true;
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-            upgradeCanvas.enabled = true;
-            upgradeCanvasVisible = true;
-        }else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            upgradeCanvas.enabled = false;
-            upgradeCanvasVisible = false;
-        }
+        upgradeCanvas.enabled = !upgradeCanvas.enabled;
+        Cursor.visible = !Cursor.visible;
+        Cursor.lockState = Cursor.lockState == CursorLockMode.Confined ? CursorLockMode.Locked : CursorLockMode.Confined; ;
     }
 }
