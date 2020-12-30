@@ -31,7 +31,7 @@ public class SphereManager : MonoBehaviour
                 Ball ballScript = newSphere.GetComponent<Ball>();
                 int index = Random.Range(0, ballTypes.types.Count);
                 Debug.Log("Creating ball type:" + index);
-                ballScript.setDefaults(ballTypes.types[index]);
+                ballScript.ballType = ballTypes.types[index];
             }
         }
     }

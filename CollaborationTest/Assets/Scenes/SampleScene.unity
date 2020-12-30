@@ -976,7 +976,9 @@ MonoBehaviour:
   startX: 25
   startY: -30
   ySeperation: -30
+  panelStartVector: {x: 0, y: 100, z: 0}
   panelSeperationVector: {x: 0, y: 100, z: 0}
+  upgradeList: {fileID: 11400000, guid: f47bc48bc7332b94c886b27bbd8ade8b, type: 2}
 --- !u!224 &963919266
 RectTransform:
   m_ObjectHideFlags: 0

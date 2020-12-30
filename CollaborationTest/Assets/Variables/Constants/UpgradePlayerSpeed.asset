@@ -20,11 +20,11 @@ MonoBehaviour:
     Variable: {fileID: 0}
   upgradeNextLevelCost:
     UseConstant: 1
-    ConstantValue: 1340
+    ConstantValue: 1
     Variable: {fileID: 0}
   upgradeLevel:
     UseConstant: 1
-    ConstantValue: 18
+    ConstantValue: 0
     Variable: {fileID: 0}
   upgradeCurve: {fileID: 11400000, guid: 24e423f79c925b446b2b69fceddd726d, type: 2}
   playerData: {fileID: 11400000, guid: 98aff98e3e1cc9e49baf5d29d5482cea, type: 2}

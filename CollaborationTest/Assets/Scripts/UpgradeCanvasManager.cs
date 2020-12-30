@@ -16,11 +16,12 @@ public class UpgradeCanvasManager : MonoBehaviour
     public Vector3 panelSeperationVector = new Vector3(0, 100f, 0);
 
     // Include some reference to the upgrade list here
+    public UpgradeList upgradeList;
 
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 3; i += 1)
+        for (int i = 0; i < upgradeList.upgrades.Count; i ++)
         {
             GameObject upgradePanel = Instantiate(upgradePrefab);
             upgradePanel.transform.SetParent(storePanel.transform, false);
@@ -29,6 +30,8 @@ public class UpgradeCanvasManager : MonoBehaviour
             rectTransform.offsetMin = new Vector2(40f, -40f);
             rectTransform.offsetMax = new Vector2(-40f, 60f);
             rectTransform.position -= panelStartVector + i * panelSeperationVector;
+
+            upgradePanel.GetComponent<UpgradePanel>().upgrade = upgradeList.upgrades[i];
         }
     }
 

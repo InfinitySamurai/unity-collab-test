@@ -14,8 +14,10 @@ public class UpgradePanel : MonoBehaviour
     public GameObject costObject;
     private Text costText;
 
+    public Button purchaseButton;
+
     // public upgrade scriptable object
-    public Upgrade upgradeData;
+    public Upgrade upgrade;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +25,14 @@ public class UpgradePanel : MonoBehaviour
         costText = costObject.GetComponent<Text>();
         upgradeNameText = upgradeNameObject.GetComponent<Text>();
         upgradeDescriptionText = upgradeDescriptionObject.GetComponent<Text>();
+        purchaseButton.onClick.AddListener(upgrade.Purchase);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        costText.text = upgrade.upgradeNextLevelCost.Value.ToString();
+        upgradeNameText.text = upgrade.upgradeName;
+        upgradeDescriptionText.text = upgrade.upgradeDescription;
     }
 }

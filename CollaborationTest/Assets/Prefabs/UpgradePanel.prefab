@@ -94,7 +94,8 @@ MonoBehaviour:
   upgradeNameObject: {fileID: 4380868826984901056}
   upgradeDescriptionObject: {fileID: 4380868826136622317}
   costObject: {fileID: 4380868827151877540}
-  upgradeData: {fileID: 0}
+  purchaseButton: {fileID: 4380868827082593658}
+  upgrade: {fileID: 0}
 --- !u!1 &4380868826136622317
 GameObject:
   m_ObjectHideFlags: 0

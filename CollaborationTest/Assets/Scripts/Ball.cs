@@ -18,11 +18,6 @@ public class Ball : MonoBehaviour
         meshRenderer.material = ballType.material;
     }
 
-    public void setDefaults(BallType type)
-    {
-        this.ballType = type;
-    }
-
     // Update is called once per frame
     void Update()
     {
