@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerData playerData;
     public CharacterController characterController;
-    public float speed = 3;
+    public float baseSpeed = 2;
     public int baseThrowPower = 100;
     public GameObject sphereTracker;
 
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         Move();
         Rotate();
 
-        Debug.DrawRay(cameraHolder.transform.position, cameraHolder.transform.forward, Color.red, 1f, true);
+        //Debug.DrawRay(cameraHolder.transform.position, cameraHolder.transform.forward, Color.red, 1f, true);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
             if (heldSphere)
             {
+                float force = baseThrowPower + (baseThrowPower * (playerData.strength.Value * 0.1f));
                 heldSphere.GetComponent<Rigidbody>().AddForce(cameraHolder.transform.forward * baseThrowPower * playerData.strength.Value);
                 heldSphere = null;
             }
@@ -111,6 +112,8 @@ public class PlayerController : MonoBehaviour
         Vector3 gravityMove = new Vector3(0, verticalSpeed, 0);
 
         Vector3 move = transform.forward * verticalMove + transform.right * horizontalMove;
+        float speed = baseSpeed + (baseSpeed * (playerData.speed.Value * 0.1f));
+        Debug.Log("current speed: " + speed);
         characterController.Move(speed * Time.deltaTime * move + gravityMove * Time.deltaTime);
     }
 }

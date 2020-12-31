@@ -5,16 +5,10 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject pointDisplay;
     public Canvas upgradeCanvas;
     public PlayerData playerData;
     private TextMeshProUGUI textMesh;
     private bool upgradeCanvasVisible;
-
-    private void OnEnable()
-    {
-        textMesh = pointDisplay.GetComponent<TextMeshProUGUI>();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +21,6 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         this.KeyDownCheck();
-        textMesh.SetText(playerData.points.Value.ToString());
     }
 
     private void KeyDownCheck()

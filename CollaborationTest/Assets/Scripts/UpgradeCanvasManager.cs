@@ -40,11 +40,4 @@ public class UpgradeCanvasManager : MonoBehaviour
     {
         
     }
-
-    public void BuyStrength()
-    {
-        playerData.points.Value--;
-        playerData.strength.Value++;
-        Debug.Log("Bought strength");
-    }
 }
