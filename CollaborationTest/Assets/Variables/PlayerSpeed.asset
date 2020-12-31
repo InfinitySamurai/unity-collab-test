@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84078023bcc99a64ebb874cefe4403a9, type: 3}
-  m_Name: PlayerStrength
+  m_Name: PlayerSpeed
   m_EditorClassIdentifier: 
   Modifiers:
-  - {fileID: 11400000, guid: b5673769ce5ec3149b679e238ef7ca11, type: 2}
-  - {fileID: 11400000, guid: b5673769ce5ec3149b679e238ef7ca11, type: 2}
+  - {fileID: 11400000, guid: 8a879b1b772cccd46986438e570a8ce9, type: 2}

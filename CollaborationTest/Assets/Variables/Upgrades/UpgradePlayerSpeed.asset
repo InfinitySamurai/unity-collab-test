@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e60b066c0bc2c6419b25d8c9e79e99b, type: 3}
-  m_Name: UpgradePlayerStrength
+  m_Name: UpgradePlayerSpeed
   m_EditorClassIdentifier: 
-  upgradeName: Player Strength
-  upgradeDescription: '*flex*'
+  upgradeName: Player Speed
+  upgradeDescription: Gotta go fast!
   upgradeBaseCost:
     UseConstant: 1
     ConstantValue: 1
     Variable: {fileID: 0}
   upgradeNextLevelCost:
     UseConstant: 1
-    ConstantValue: 1
+    ConstantValue: -2147483648
     Variable: {fileID: 0}
   upgradeLevel:
     UseConstant: 1
-    ConstantValue: 0
+    ConstantValue: 95
     Variable: {fileID: 0}
-  upgradeCurve: {fileID: 11400000, guid: 6b1769152ae127445b7443464a14124b, type: 2}
+  upgradeCurve: {fileID: 11400000, guid: 24e423f79c925b446b2b69fceddd726d, type: 2}
   playerData: {fileID: 11400000, guid: 98aff98e3e1cc9e49baf5d29d5482cea, type: 2}

@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     public FloatReference points;
-    public FloatReference strength;
-
-    public AnimationCurve strengthCurve;
+    public PlayerStat strength;
+    public PlayerStat speed;
 }
