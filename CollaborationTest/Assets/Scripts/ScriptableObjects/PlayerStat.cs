@@ -18,7 +18,13 @@ public class PlayerStat: ScriptableObject
             float total = 1;
             Modifiers.ForEach(mod =>
             {
-                total += mod.upgradeLevel.Value;
+                if(mod.type == Upgrade.UPGRADE_TYPES.ADDER)
+                {
+                    total += mod.upgradeLevel.Value;
+                }else if(mod.type == Upgrade.UPGRADE_TYPES.MULTIPLIER)
+                {
+                    total *= mod.upgradeLevel.Value;
+                }
             });
             return total;
         }

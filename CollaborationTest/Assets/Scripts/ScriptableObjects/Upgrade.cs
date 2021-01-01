@@ -5,11 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Upgrade", menuName = "Data Store/Upgrade", order = 1)]
 public class Upgrade : ScriptableObject
 {
+    public enum UPGRADE_TYPES
+    {
+        ADDER, MULTIPLIER
+    }
+
     public string upgradeName;
     public string upgradeDescription;
+    public UPGRADE_TYPES type = UPGRADE_TYPES.ADDER;
     public IntReference upgradeBaseCost;
     public IntReference upgradeNextLevelCost;
-    public IntReference upgradeLevel;
+    public IntReference upgradeLevel;    
 
     public ExponentialCurve upgradeCurve;
     public PlayerData playerData;
