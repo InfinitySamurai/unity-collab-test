@@ -6,9 +6,13 @@ public class Processor : MonoBehaviour
 {
     public GameObject collecter;
     public GameObject dispenser;
-    private List<Ball> storage;
 
     public int maxItemsInStorage;
+    public int dispenseTimeoutSeconds;
+
+    private float countdown = 0;
+    private Queue<GameObject> storage = new Queue<GameObject>();
+
 
 
     // Start is called before the first frame update
@@ -21,7 +25,12 @@ public class Processor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        countdown -= Time.deltaTime;
+        if(countdown < 0)
+        {
+            countdown = dispenseTimeoutSeconds;
+            handleDispense();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,11 +47,24 @@ public class Processor : MonoBehaviour
     {
         if(collision.collider.gameObject.tag == "Sphere")
         {
-            GameObject sphere = collision.collider.gameObject;
-            Rigidbody sphereRigid = sphere.GetComponent<Rigidbody>();
-            //a sphere hit the collector
-            Debug.Log("We have contact!");
+
             //do something with it
+            if(storage.Count < maxItemsInStorage)
+            {
+                GameObject ball = collision.gameObject;
+                ball.SetActive(false);
+                storage.Enqueue(ball);
+            }
+        }
+    }
+
+    private void handleDispense()
+    {
+        if(storage.Count > 0)
+        {
+            GameObject sphere = storage.Dequeue();
+            sphere.SetActive(true);
+            Rigidbody sphereRigid = sphere.GetComponent<Rigidbody>();
             sphere.transform.position = dispenser.transform.position + (dispenser.transform.forward);
             sphereRigid.velocity = Vector3.zero;
             sphereRigid.AddForce(dispenser.transform.forward * 500);

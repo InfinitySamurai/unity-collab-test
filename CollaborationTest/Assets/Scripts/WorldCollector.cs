@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collector : MonoBehaviour
+public class WorldCollector : MonoBehaviour
 {
     public ParticleSystem particles;
     public PlayerData playerData;

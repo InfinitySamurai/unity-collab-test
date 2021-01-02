@@ -1466,7 +1466,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collecter: {fileID: 1086535119}
   dispenser: {fileID: 1488894305}
-  maxItemsInStorage: 10
+  maxItemsInStorage: 1
+  dispenseTimeoutSeconds: 10
 --- !u!65 &1961533324
 BoxCollider:
   m_ObjectHideFlags: 0

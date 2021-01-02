@@ -64,7 +64,13 @@ public class PlayerController : MonoBehaviour
 
         if(heldSphere)
         {
-            heldSphere.transform.position = this.transform.position + cameraHolder.transform.forward * 2;
+            if(!heldSphere.isActiveAndEnabled)
+            {
+                heldSphere = null;
+            } else
+            {
+                heldSphere.transform.position = this.transform.position + cameraHolder.transform.forward * 2;
+            }
         }
 
         if( Input.GetKey(KeyCode.F))
@@ -113,7 +119,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = transform.forward * verticalMove + transform.right * horizontalMove;
         float speed = baseSpeed + (baseSpeed * (playerData.speed.Value * 0.1f));
-        Debug.Log("current speed: " + speed);
         characterController.Move(speed * Time.deltaTime * move + gravityMove * Time.deltaTime);
     }
 }
