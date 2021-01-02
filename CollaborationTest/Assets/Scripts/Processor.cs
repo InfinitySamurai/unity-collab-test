@@ -26,7 +26,7 @@ public class Processor : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Collider collider = collision.contacts[0].thisCollider;
+        Collider collider = collision.GetContact(0).thisCollider;
         //something hit the collector GameObject
         if(collider.gameObject.tag == "Collecter")
         {
